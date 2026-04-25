@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ButtonList component */
+  .button-list {
+    @apply flex flex-row items-center w-full h-[85px] px-6 py-4 bg-white rounded-2xl;
+  }
+  .arrow-right {
+    @apply absolute right-6  top-1/2;
+  }
+}
