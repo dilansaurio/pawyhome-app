@@ -6,12 +6,12 @@ Aplicación móvil de adopción de mascotas desarrollada con **React Native** y 
 
 ## 📱 Pantallas
 
-| Pantalla | Descripción |
-|---|---|
-| **Home** | Lista de mascotas por categoría con card destacada y modales de detalle |
-| **Encontrar** | Mapa interactivo con marcadores de mascotas disponibles cerca |
-| **Agregar** | Formulario paso a paso para registrar una nueva mascota en adopción |
-| **Perfil** | Vista del perfil del usuario |
+| Pantalla      | Descripción                                                             |
+| ------------- | ----------------------------------------------------------------------- |
+| **Home**      | Lista de mascotas por categoría con card destacada y modales de detalle |
+| **Encontrar** | Mapa interactivo con marcadores de mascotas disponibles cerca           |
+| **Agregar**   | Formulario paso a paso para registrar una nueva mascota en adopción     |
+| **Perfil**    | Vista del perfil del usuario                                            |
 
 ---
 
