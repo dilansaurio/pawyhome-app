@@ -1,5 +1,4 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import FindContent from "../screen/findscreen/FindContent";
 import FindHeader from "../screen/findscreen/FindHeader";
 
@@ -12,7 +11,7 @@ export default function Find() {
         paddingHorizontal: 16,
         gap: 12,
       }}
-      edges={["left", "right", "bottom"]}
+      edges={["left", "right"]}
     >
       <FindHeader />
       <FindContent />

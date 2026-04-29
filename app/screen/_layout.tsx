@@ -7,6 +7,10 @@ export default function ScreenLayout() {
         name="addscreen/StepOne"
         options={{ title: "Agregar Mascota" }}
       />
+      <Stack.Screen
+        name="settingsscreen/Settings"
+        options={{ headerShown: false }}
+      />
     </Stack>
   );
 }

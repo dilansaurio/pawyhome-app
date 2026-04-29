@@ -15,7 +15,7 @@ export default function ScreenLayout({
   return (
     <SafeAreaView
       className={`flex-1 bg-white ${className ?? ""}`}
-      edges={["left", "right", "bottom"]}
+      edges={["left", "right"]}
     >
       <ScrollView
         className={`flex-1 ${className ?? ""}`}

@@ -1,5 +1,6 @@
 import ButtonList from "@/components/molecules/ButtonList";
 import { View } from "@/components/Themed";
+import { router } from "expo-router";
 
 export default function ProfileHeader() {
   const DATA = [
@@ -17,6 +18,7 @@ export default function ProfileHeader() {
       id: "3",
       title: "Configuración",
       iconName: "cog",
+      onPress: () => router.push("/screen/settingsscreen/Settings"),
     },
   ];
 

@@ -1,11 +1,12 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   DarkTheme,
   DefaultTheme,
   ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { router, Stack, useRootNavigationState } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
@@ -19,8 +20,7 @@ export {
 } from "expo-router";
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: "(tabs)",
+  initialRouteName: "onboarding",
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -52,12 +52,40 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const navigationState = useRootNavigationState();
+
+  useEffect(() => {
+    if (!navigationState?.key) return;
+    AsyncStorage.multiGet(["onboardingCompleted", "userProfile"]).then(
+      ([[, onboarded], [, profile]]) => {
+        if (onboarded && profile) {
+          router.replace("/(tabs)");
+        } else if (onboarded && !profile) {
+          router.replace("/login");
+        } else {
+          router.replace("/onboarding");
+        }
+      },
+    );
+  }, [navigationState?.key]);
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="screen" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="onboarding"
+          options={{ headerShown: false, animation: "fade" }}
+        />
+        <Stack.Screen
+          name="login"
+          options={{ headerShown: false, animation: "fade" }}
+        />
+        <Stack.Screen
+          name="register"
+          options={{ headerShown: false, animation: "slide_from_right" }}
+        />
       </Stack>
     </ThemeProvider>
   );

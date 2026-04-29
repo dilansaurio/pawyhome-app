@@ -12,7 +12,7 @@ export default function ButtonList({ items }: ButtonListProps) {
         scrollEnabled={false}
         renderItem={({ item }) => (
           <View className="pt-4 justify-center">
-            <TouchableOpacity className="button-list">
+            <TouchableOpacity className="button-list" onPress={item.onPress}>
               {item.iconName && (
                 <FontAwesome
                   name={item.iconName}

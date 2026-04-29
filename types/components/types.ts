@@ -34,6 +34,7 @@ export type ButtonListProps = {
     id: string;
     title: string;
     iconName?: any;
+    onPress?: () => void;
   }[];
 };
 

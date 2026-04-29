@@ -14,10 +14,7 @@ export default function TabOneScreen() {
   const [isImageCardModalVisible, setIsImageCardModalVisible] = useState(false);
 
   return (
-    <SafeAreaView
-      className="flex-1 bg-white"
-      edges={["left", "right", "bottom"]}
-    >
+    <SafeAreaView className="flex-1 bg-white" edges={["left", "right"]}>
       <FlatList
         data={CATEGORY_DATA}
         keyExtractor={(item) => item.id}
