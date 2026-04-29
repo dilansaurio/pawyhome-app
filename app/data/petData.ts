@@ -30,3 +30,10 @@ export const PET_HEALTH_ISSUES: SelectOptions[] = [
   { id: "7", title: "Alergias", value: "alergias" },
   { id: "8", title: "Microchip", value: "microchip" },
 ];
+
+export const PET_EMOJI: Record<string, string> = {
+  "1": "🐶",
+  "2": "🐱",
+  "3": "🐰",
+  "4": "🐹",
+};

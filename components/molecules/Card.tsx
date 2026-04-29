@@ -1,19 +1,11 @@
 import { CARD_COLORS } from "@/constants/ColorsCard";
+import { CardProps } from "@/types/components/types";
 import { Image, TouchableOpacity } from "react-native";
 import { Text, View } from "../Themed";
 
 function getRandomCardColor() {
   return CARD_COLORS[Math.floor(Math.random() * CARD_COLORS.length)];
 }
-
-type CardProps = {
-  title?: string;
-  description?: string;
-  button?: boolean;
-  backgroundColor?: string;
-  source: any;
-  onPress: () => void;
-};
 
 export default function Card({
   title,

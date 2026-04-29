@@ -85,3 +85,13 @@ export type ButtonSectionsProps = {
   iconColor?: string;
   iconSize?: number;
 };
+
+// Card component
+export type CardProps = {
+  title?: string;
+  description?: string;
+  button?: boolean;
+  backgroundColor?: string;
+  source: any;
+  onPress: () => void;
+};
