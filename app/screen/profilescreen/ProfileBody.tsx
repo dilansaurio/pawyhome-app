@@ -13,6 +13,7 @@ export default function ProfileHeader() {
       id: "2",
       title: "Mis adopciones",
       iconName: "paw",
+      onPress: () => router.push("/screen/profilescreen/MisAdopciones"),
     },
     {
       id: "3",

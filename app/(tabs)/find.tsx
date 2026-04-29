@@ -1,6 +1,6 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import FindContent from "../screen/findscreen/FindContent";
-import FindHeader from "../screen/findscreen/FindHeader";
+import FindContent from "../screen/findscreen/components/FindContent";
+import FindHeader from "../screen/findscreen/components/FindHeader";
 
 export default function Find() {
   return (

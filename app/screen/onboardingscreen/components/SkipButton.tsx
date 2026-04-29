@@ -1,7 +1,7 @@
 import { slides } from "@/app/data/onBoarding";
 import { useOnboardingContext } from "@/hooks/OnboardingContext";
 import { TouchableOpacity } from "react-native";
-import { Text, View } from "../../../components/Themed";
+import { Text, View } from "../../../../components/Themed";
 
 export default function SkipButton() {
   const { currentIndex, handleComplete } = useOnboardingContext();

@@ -11,6 +11,10 @@ export default function ScreenLayout() {
         name="settingsscreen/Settings"
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="profilescreen/MisAdopciones"
+        options={{ headerShown: false }}
+      />
     </Stack>
   );
 }

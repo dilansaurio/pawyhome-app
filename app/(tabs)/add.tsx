@@ -1,41 +1,12 @@
-import { Text, View } from "@/components/Themed";
+import { View } from "@/components/Themed";
 import ButtonSections from "@/components/molecules/ButtonSections";
 import ScreenLayout from "@/components/template/screenlayout";
 import { useRouter } from "expo-router";
-
-const DATA = [
-  {
-    id: "1",
-    // icon: "",
-    title: "Perro",
-  },
-  {
-    id: "2",
-    // icon: "",
-    title: "Gato",
-  },
-  {
-    id: "3",
-    // icon: "",
-    title: "Conejo",
-  },
-  {
-    id: "4",
-    // icon: "",
-    title: "Hámster",
-  },
-];
+import { AddHeader } from "../screen/addscreen/components/AddHeader";
+import { DATA_SECTIONS } from "../screen/addscreen/data";
 
 export default function Add() {
   const router = useRouter();
-
-  const AddHeader = () => {
-    return (
-      <View className="items-center justify-center pt-6">
-        <Text className="pt-3 font-bold text-2xl">Elige una mascota</Text>
-      </View>
-    );
-  };
 
   return (
     <ScreenLayout>
@@ -50,7 +21,7 @@ export default function Add() {
               params: { petType: item.title },
             })
           }
-          items={DATA}
+          items={DATA_SECTIONS}
           numColumns={2}
         />
       </View>

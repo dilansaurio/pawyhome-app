@@ -8,6 +8,8 @@ type HomeModalContentProps = {
   petAge: string;
   source: any;
   details: { id: string; title: string; description: string }[];
+  onAdopt?: () => void;
+  hideAdoptButton?: boolean;
 };
 
 export default function HomeModalContent({
@@ -16,6 +18,8 @@ export default function HomeModalContent({
   petAge,
   source,
   details,
+  onAdopt,
+  hideAdoptButton = false,
 }: HomeModalContentProps) {
   return (
     <View>
@@ -38,11 +42,16 @@ export default function HomeModalContent({
           >
             <Text className="font-medium text-[#1F7A8C]">Atrás</Text>
           </TouchableOpacity>
-          <TouchableOpacity className="flex-1 min-h-[44px] rounded-[24px] px-[16px] items-center justify-center bg-brand-primary">
-            <Text style={{ color: "white" }} className="font-medium">
-              Adoptar!
-            </Text>
-          </TouchableOpacity>
+          {!hideAdoptButton && (
+            <TouchableOpacity
+              className="flex-1 min-h-[44px] rounded-[24px] px-[16px] items-center justify-center bg-brand-primary"
+              onPress={onAdopt}
+            >
+              <Text style={{ color: "white" }} className="font-medium">
+                Adoptar!
+              </Text>
+            </TouchableOpacity>
+          )}
         </View>
       </View>
     </View>

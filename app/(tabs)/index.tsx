@@ -1,13 +1,15 @@
 import Card from "@/components/molecules/Card";
 import ModalComponent from "@/components/molecules/Modal";
 import { View } from "@/components/Themed";
+import { saveAdoption } from "@/hooks/useAdoptions";
+import { router } from "expo-router";
 import { useState } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { CATEGORY_DATA, PetCategory } from "../data/category";
-import HomeImageCardModalContent from "../screen/homescreen/HomeImageCardModalContent";
-import HomeListHeader from "../screen/homescreen/HomeListHeader";
-import HomeModalContent from "../screen/homescreen/HomeModalContent";
+import HomeImageCardModalContent from "../screen/homescreen/components/HomeImageCardModalContent";
+import HomeListHeader from "../screen/homescreen/components/HomeListHeader";
+import HomeModalContent from "../screen/homescreen/components/HomeModalContent";
 
 export default function TabOneScreen() {
   const [selectedPet, setSelectedPet] = useState<PetCategory | null>(null);
@@ -48,6 +50,11 @@ export default function TabOneScreen() {
               petAge={selectedPet.petAge}
               source={selectedPet.source}
               details={selectedPet.details}
+              onAdopt={async () => {
+                await saveAdoption(selectedPet);
+                setSelectedPet(null);
+                router.push("/screen/profilescreen/MisAdopciones");
+              }}
             />
           )
         }
@@ -64,63 +71,3 @@ export default function TabOneScreen() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  modalHeaderImage: {
-    width: "100%",
-    height: 220,
-  },
-  modalBody: {
-    paddingHorizontal: 16,
-    paddingBottom: 16,
-  },
-  sectionsList: {
-    width: "100%",
-    paddingHorizontal: 0,
-    marginTop: 16,
-  },
-  sectionButton: {
-    minHeight: 45,
-    width: 45,
-    marginTop: 0,
-    paddingHorizontal: 4,
-    borderColor: "#1F7A8C",
-    backgroundColor: "#EEF3F5",
-  },
-  sectionButtonText: {
-    marginTop: 0,
-    fontSize: 10,
-    color: "#1F7A8C",
-    fontWeight: "600",
-  },
-  actionsContainer: {
-    width: "100%",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 12,
-    marginTop: 20,
-  },
-  actionButton: {
-    flex: 1,
-    minHeight: 44,
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  primaryButton: {
-    backgroundColor: "#1F7A8C",
-  },
-  secondaryButton: {
-    backgroundColor: "#EEF3F5",
-  },
-  primaryButtonText: {
-    color: "#FFFFFF",
-    fontWeight: "600",
-  },
-  secondaryButtonText: {
-    color: "#1F7A8C",
-    fontWeight: "600",
-  },
-});
