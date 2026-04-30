@@ -1,9 +1,10 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import * as SecureStore from "expo-secure-store";
 import { useState } from "react";
+import { Alert } from "react-native";
 import { SIZE_PET } from "../app/data/petData";
 
-const STEP_ONE_STORAGE_KEY = "@pawyhome/step-one";
+const STEP_ONE_STORAGE_KEY = "pawyhome_step-one";
 
 export const useStepOneState = () => {
   const router = useRouter();
@@ -58,9 +59,13 @@ export const useStepOneState = () => {
         JSON.stringify(payload),
       );
       setShowConfirmModal(false);
-      router.replace("/(tabs)");
+      router.replace("/(tabs)/index");
     } catch (error) {
       console.error("Error al guardar StepOne localmente", error);
+      Alert.alert(
+        "Error",
+        "No se pudo guardar la información. Inténtalo de nuevo.",
+      );
     } finally {
       setIsSaving(false);
     }

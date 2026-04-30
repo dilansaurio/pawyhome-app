@@ -39,7 +39,7 @@ export default function SettingsScreen() {
       </View>
 
       {/* Dev options */}
-      <View className="mt-6 mx-6 rounded-2xl bg-white overflow-hidden">
+      {/* <View className="mt-6 mx-6 rounded-2xl bg-white overflow-hidden">
         <TouchableOpacity
           onPress={() => {
             AsyncStorage.multiRemove([
@@ -75,8 +75,8 @@ export default function SettingsScreen() {
           >
             Resetear sesión
           </Text>
-        </TouchableOpacity>
-      </View>
+        </TouchableOpacity> 
+      </View>*/}
 
       {/* Options */}
       <View className="mt-4 mx-6 rounded-2xl bg-white overflow-hidden">

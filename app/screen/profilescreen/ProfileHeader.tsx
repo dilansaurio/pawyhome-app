@@ -8,7 +8,7 @@ type HeaderProfileProps = {
 
 export default function ProfileHeader({ name, location }: HeaderProfileProps) {
   return (
-    <View className="flex items-center justify-center pt-10 top-10">
+    <View className="flex items-center justify-center pt-10 top-6">
       {/* icon profile */}
       <View className="w-28 h-28 rounded-full items-center justify-center">
         <Image

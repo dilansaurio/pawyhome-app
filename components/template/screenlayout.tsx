@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native";
+import { KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 type ScreenLayoutProps = {
@@ -15,14 +15,21 @@ export default function ScreenLayout({
   return (
     <SafeAreaView
       className={`flex-1 bg-white ${className ?? ""}`}
-      edges={["left", "right"]}
+      edges={["left", "right", "bottom"]}
     >
-      <ScrollView
-        className={`flex-1 ${className ?? ""}`}
-        contentContainerStyle={{ flexGrow: 1 }}
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : "padding"}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
       >
-        {children}
-      </ScrollView>
+        <ScrollView
+          className={`flex-1 ${className ?? ""}`}
+          contentContainerStyle={{ flexGrow: 1 }}
+          keyboardShouldPersistTaps="handled"
+        >
+          {children}
+        </ScrollView>
+      </KeyboardAvoidingView>
       {footer}
     </SafeAreaView>
   );

@@ -6,9 +6,10 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          primary: "#3E8BAF", // Azul principal
+          // primary: "#3E8BAF", // Azul principal
+          primary: "#FFCD5E", // Azul principal
           primarylight: "#8FE0E3", // Cyan
-          secondary: "#FFCD5E", // Amarillo
+          secondary: "#3E8BAF", // Azul secundario
           orange: "#F9A559", // Naranja
         },
         neutral: {

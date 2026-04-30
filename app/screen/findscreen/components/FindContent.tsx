@@ -6,7 +6,7 @@ import { View } from "@/components/Themed";
 import { useMemo, useState } from "react";
 import { Platform } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import HomeModalContent from "../homescreen/HomeModalContent";
+import HomeModalContent from "../../homescreen/components/HomeModalContent";
 
 export default function FindContent() {
   const [selectedPet, setSelectedPet] = useState<PetCategory | null>(null);

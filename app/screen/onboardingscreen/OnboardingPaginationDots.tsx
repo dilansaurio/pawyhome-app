@@ -35,7 +35,7 @@ export default function OnboardingPaginationDots() {
         >
           <Text
             className="text-base font-semibold"
-            style={{ color: "#111827" }}
+            style={{ color: "#FFCD5E" }}
           >
             {currentIndex === slides.length - 1 ? "Comenzar" : "Siguiente"}
           </Text>

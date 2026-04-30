@@ -2,13 +2,13 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
 import { useState } from "react";
 import {
-    KeyboardAvoidingView,
-    Platform,
-    ScrollView,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -38,7 +38,7 @@ export default function LoginScreen() {
             <View className="items-center mb-10">
               <View
                 className="w-20 h-20 rounded-2xl items-center justify-center mb-4"
-                style={{ backgroundColor: "#3E8BAF" }}
+                style={{ backgroundColor: "#FFCD5E" }}
               >
                 <Text className="text-white text-4xl">🐾</Text>
               </View>
@@ -127,11 +127,9 @@ export default function LoginScreen() {
             <TouchableOpacity
               onPress={handleLogin}
               className="w-full py-4 rounded-xl items-center mt-8"
-              style={{ backgroundColor: "#3E8BAF" }}
+              style={{ backgroundColor: "#FFCD5E" }}
             >
-              <Text className="text-white text-base font-semibold">
-                Iniciar sesión
-              </Text>
+              <Text className=" text-base font-semibold">Iniciar sesión</Text>
             </TouchableOpacity>
 
             {/* Divider */}

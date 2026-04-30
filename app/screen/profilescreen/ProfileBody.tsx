@@ -24,7 +24,7 @@ export default function ProfileHeader() {
   ];
 
   return (
-    <View className="flex px-10 pt-20">
+    <View className="flex px-6 pt-10">
       <ButtonList items={DATA} />
     </View>
   );

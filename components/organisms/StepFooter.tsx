@@ -41,7 +41,7 @@ export function StepFooter({
 
 const styles = StyleSheet.create({
   nextButton: {
-    backgroundColor: "#3E8BAF",
+    backgroundColor: "#FFCD5E",
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
